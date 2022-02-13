@@ -38,6 +38,7 @@ export class GamesComponent implements OnInit, OnDestroy {
 		this.signalRService.addIncrementNotificationListener();
 		this.signalRService.gameCompleteListener();
 		this.signalRService.bookChanges$.subscribe((game: Game) => {
+			console.log(game);
 			this.game = game;			
 		});
 		this.signalRService.gameComplete$.subscribe((complete:Boolean)=>{
