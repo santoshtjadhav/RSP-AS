@@ -1,0 +1,123 @@
+<div class="container mt-5">
+  <div class="row">    
+<div class="col-sm-4">
+  <h4 class="d-flex justify-content-between align-items-center mb-3">
+    <span class="text-muted">Notification.....</span>
+  </h4>
+  <ul class="list-group mb-3">
+    <li class="list-group-item d-flex justify-content-between lh-condensed" *ngFor="let message of messages">
+      <div>
+        <!-- <h6 class="my-0">Product name</h6> -->
+        <small class="text-muted">{{message}}</small>
+      </div>
+      <!-- <span class="text-muted">$12</span> -->
+    </li>
+  </ul>
+
+</div>
+
+<div class="col-sm-8">
+
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-4">
+          <button class="btn btn-primary" id="startNewGame" (click)="startGame()">Start new game.....</button>
+        </div>
+        <div class="col-sm-4">
+          <a class="btn btn-primary" href="{{this.player2URL}}" target="_blank" [hidden]="showURL">Opponent link</a>
+        </div>
+        <div class="col-sm-4">
+          <p>{{remainingsec}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p></p>
+  <div class="card" id="Player1" class="{{!isPlayer1 ? 'disabledbutton' : ''}}">
+    <div class="card-header">
+      Player 1
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-2">
+          <select class="form-select" [disabled]="isCPU1">
+            <option value="1" selected>Player 1</option>
+          </select>
+        </div>
+        <div class="col-sm-8">
+          <div class="row">
+            <div class="col-sm-4">
+              <button class="btn btn-primary" [disabled]="player1Choice != 0 && player1Choice != 1"
+                (click)="choose(1,1)">scissors <i class="fa fa-scissors"></i></button>
+
+            </div>
+            <div class="col-sm-4">
+              <button class="btn btn-primary" [disabled]="player1Choice != 0 && player1Choice != 2"
+                (click)="choose(2,1)">Rock
+                <i class="fa-solid fa-hand-back-fist"></i></button>
+
+            </div>
+            <div class="col-sm-4">
+              <button class="btn btn-primary" [disabled]="player1Choice != 0 && player1Choice != 3"
+                (click)="choose(3,1)">Paper
+                <i class="fa fa-newspaper-o"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-2">
+          <input class="custom-control-input" type="checkbox" value="1" id="cpu1" [(ngModel)]="isCPU1"
+            (change)="disabledropdown($event)">
+          <label class="custom-control-label" for="cpu1">Computer 1</label>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p></p>
+  <div class="card" id="Player1" class="{{!isPlayer2 ? 'disabledbutton' : ''}}">
+    <div class="card-header">
+      Player 2
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-2">
+          <select class="form-select" [disabled]="isCPU2">
+            <option value="1" selected>Player 2</option>
+          </select>
+        </div>
+        <div class="col-sm-8">
+          <div class="row">
+            <div class="col-sm-4">
+              <button class="btn btn-primary" [disabled]="player2Choice != 0 && player2Choice != 1"
+                (click)="choose(1,2)">
+                scissors <i class="fa fa-scissors"></i></button>
+
+            </div>
+            <div class="col-sm-4">
+              <button class="btn btn-primary" [disabled]="player2Choice != 0 && player2Choice != 2"
+                (click)="choose(2,2)"> Rock
+                <i class="fa fa-hand-rock"></i></button>
+
+
+            </div>
+            <div class="col-sm-4">
+              <button class="btn btn-primary" [disabled]="player2Choice != 0 && player2Choice != 3"
+                (click)="choose(3,2)"> Paper
+                <i class="fa fa-newspaper-o"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-2">
+          <input class="custom-control-input" type="checkbox" value="2" id="cpu2" [(ngModel)]="isCPU2"
+            (change)="disabledropdown($event)">
+          <label class="custom-control-label" for="cpu2">Computer 2</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
