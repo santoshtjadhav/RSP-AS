@@ -21,25 +21,5 @@ namespace RSP.Controllers
         { 
             _hub = hub;
         }
-
-        public IActionResult Get()
-        { 
-            //var timerManager = new TimerManager(() => _hub.Clients.All.SendAsync("transfergamedata", DataManager.GetData())); 
-            
-            return Ok(new { Message = "Request Completed" }); 
-        }
-
-        [HttpGet("addplayer2")]
-        public async Task<ActionResult<Game>> AddPlayer2Async(string groupId,string connectionId )
-        {
-            Game data = DataStorage.DataManager.Games.FirstOrDefault(x => x.GroupId == groupId);
-            data.Player2.ConnectionId = connectionId;
-            await _hub.Groups.AddToGroupAsync(connectionId, data.GroupId);
-            await _hub.Clients.Group(data.GroupId).SendAsync("broadcastgamedata", data);
-            await _hub.Clients.Group(data.GroupId).SendAsync("notify", $"{ data.Player1.Name} started new game");
-            return Ok("All ok");
-
-        }
-
     }
 }

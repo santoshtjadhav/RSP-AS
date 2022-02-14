@@ -22,10 +22,6 @@ namespace RSP.HubConfig
         { 
             await Clients.Group(data.GroupId).SendAsync("broadcastgamedata", data);            
         }
-        //public string GetConnectionId()
-        //{
-        //    return Context.ConnectionId;
-        //}
 
         public async Task AddPlayer2(string groupId)
         {
@@ -49,7 +45,6 @@ namespace RSP.HubConfig
             DataStorage.DataManager.Games.Remove(itemToRemove);
             await Clients.Group(groupId).SendAsync("gamecomplete", true);
         }
-
 
         public async Task notifyIncrement(string groupId, string message)
         {

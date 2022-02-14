@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RSP.API", "RSP.API\RSP.API.csproj", "{17E69256-7010-469C-9D59-5496B106136B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RSP.API.Test", "RSP.API.Test\RSP.API.Test.csproj", "{14D5AFE5-96D6-4068-9A24-AE4E3944005A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{17E69256-7010-469C-9D59-5496B106136B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17E69256-7010-469C-9D59-5496B106136B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17E69256-7010-469C-9D59-5496B106136B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14D5AFE5-96D6-4068-9A24-AE4E3944005A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14D5AFE5-96D6-4068-9A24-AE4E3944005A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14D5AFE5-96D6-4068-9A24-AE4E3944005A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14D5AFE5-96D6-4068-9A24-AE4E3944005A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
